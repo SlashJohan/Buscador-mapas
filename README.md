@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🗺️ Buscador de Ubicaciones con React + Next.js + Leaflet
 
-## Getting Started
+Este proyecto es parte de una prueba técnica Full Stack. Permite al usuario buscar lugares usando texto o seleccionarlos directamente en un mapa interactivo. Al hacer clic en un resultado o en el mapa, el marcador se actualiza y se sincroniza con el campo de búsqueda.
 
-First, run the development server:
+---
+
+## 🚀 Tecnologías utilizadas
+
+- ✅ **React 19** + **Next.js 15**
+- ✅ **Leaflet** y **React Leaflet** para mapas interactivos
+- ✅ **Tailwind CSS 4** para estilos
+- ✅ **OpenStreetMap Nominatim API** para búsqueda y geolocalización inversa
+
+---
+
+## ⚙️ Instrucciones de instalación
+
+1. Clona este repositorio:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+git clone https://github.com/SlashJohan/Buscador-mapas.git
+cd Buscador-mapas
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+🔑 API y configuración
+No se requiere clave de API.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+La aplicación usa la API pública de Nominatim para búsquedas y reverse geocoding.
 
-## Learn More
+Se recomienda añadir un header User-Agent válido (como un correo electrónico) para cumplir con la política de uso.
 
-To learn more about Next.js, take a look at the following resources:
+📌 Decisiones técnicas
+Se eligió Leaflet en lugar de Google Maps para evitar la dependencia de claves API y facilitar la configuración.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Se usó Tailwind CSS para rapidez de maquetado, legibilidad y estilo responsive.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Se implementó useMap, flyTo y sincronización con geolocalización nativa.
 
-## Deploy on Vercel
+📉 Limitaciones actuales
+No se completó la parte Back-End con AWS por limitaciones en la verificación de la cuenta.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+No hay persistencia de datos (no se guardan búsquedas ni ubicaciones).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+No hay manejo avanzado de errores o carga (por ejemplo, fallos en la geolocalización).
+
+💡 Posibles mejoras
+Integrar AWS Amplify + Lambda + DynamoDB para almacenar favoritos.
+
+Mostrar historial de búsquedas recientes.
+
+Filtrar resultados por tipo de lugar (parques, hospitales, restaurantes).
+
+Añadir pruebas automatizadas (unitarias y de integración).
+
+
+👨‍💻 Autor
+Johan Alberto Domínguez Acosta
+📍 Bogota, Colombia
+📧 johanalbertodominguezacosta@gmail.com
